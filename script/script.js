@@ -68,7 +68,6 @@ let last = performance.now();
 
 function drawPetals(petals) {
     if (!petalImg.complete) return;
-    console.log(petals)
 
     petals.forEach((petal) => {
         context.save();
@@ -167,12 +166,12 @@ function tick(now) {
             const newPetal = generatePetal();
             
             if (wind > 30) {
-                newPetal.x = rand(-30, innerWiddth * 0.2);
+                newPetal.x = rand(-30, innerWidth * 0.2);
             }
             if (wind < -30) {
                 newPetal.x = rand(innerWidth * 0.8, innerWidth + 30);
             }
-            
+
             petals[i] = newPetal;
         }
     }
@@ -186,7 +185,6 @@ window.addEventListener('DOMContentLoaded', () => {
     resize();
     generatePetals(petalCount);
     tick(performance.now())
-    console.log(petals);
 });
 
 btn.addEventListener('click', async () => {
